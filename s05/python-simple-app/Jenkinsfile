@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'pip3 install -r s05/python-simple-app/requirements.txt'
+                sh 'sudo pip3 install -r s05/python-simple-app/requirements.txt'
             }
         }
 
