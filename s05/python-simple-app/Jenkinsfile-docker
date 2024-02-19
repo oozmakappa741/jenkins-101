@@ -17,5 +17,16 @@ pipeline {
                 sh 'python3 s05/python-simple-app/app.py &'
             }
         }
+        stage('test') {
+            steps {
+                sh 'sleep 60 && curl -s localhost:8000'
+            }
+        }
+
+        stage('cleanup') {
+            steps {
+                sh 'fuser -k 8000/tcp'
+            }
+        }
     }
 }
